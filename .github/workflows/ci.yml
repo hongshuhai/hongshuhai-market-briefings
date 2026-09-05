@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Python Syntax Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 检查 commodity 模块脚本
+        working-directory: commodity/scripts
+        run: |
+          echo "🔍 检查 commodity 模块脚本语法..."
+          python -m py_compile commodity_morning_report.py
+          python -m py_compile commodity_temp_fetch.py
+          python -m py_compile commodity_oi_analyze.py
+          python -m py_compile commodity_term_analyze.py
+          python -m py_compile silicon_temp_fetch.py
+          python -m py_compile send_report.py
+          python -m py_compile silicon_focus/silicon_focus_report.py
+          python -m py_compile silicon_focus/silicon_kline_fetch.py
+          python -m py_compile silicon_focus/silicon_temp_fetch.py
+          python -m py_compile silicon_focus/send_report.py
+          python -m py_compile lithium_focus/lithium_focus_report.py
+          python -m py_compile lithium_focus/send_report.py
+          echo "✅ commodity 模块 12 个脚本全部通过语法检查"
+
+      - name: 检查 us-stock 模块脚本
+        working-directory: us-stock/scripts
+        run: |
+          echo "🔍 检查 us-stock 模块脚本语法..."
+          python -m py_compile fetch_us_market.py
+          python -m py_compile generate_pre_market.py
+          python -m py_compile generate_market_post.py
+          python -m py_compile update_excel_pre_market.py
+          python -m py_compile update_xlsx_r11.py
+          python -m py_compile send_report.py
+          echo "✅ us-stock 模块 6 个脚本全部通过语法检查"
+
+      - name: 校验 Excel 模板存在
+        run: |
+          echo "🔍 校验 Excel 模板..."
+          test -f us-stock/templates/market_temp_7step_template.xlsx && \
+            echo "✅ Excel 模板存在" || (echo "❌ Excel 模板缺失" && exit 1)
+
+      - name: 校验示例 HTML 存在
+        run: |
+          echo "🔍 校验示例 HTML..."
+          test -f commodity/examples/commodity_morning_2026_09_05.html && \
+            echo "✅ commodity 示例存在" || (echo "❌ commodity 示例缺失" && exit 1)
+          test -f us-stock/examples/us_pre_market_2026-09-04.html && \
+            echo "✅ us-stock 示例存在" || (echo "❌ us-stock 示例缺失" && exit 1)
+
+  repo-hygiene:
+    name: 仓库卫生检查
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查 README/LICENSE/.gitignore 必备文件
+        run: |
+          echo "🔍 检查必备项目文件..."
+          for f in README.md LICENSE .gitignore; do
+            if [ ! -f "$f" ]; then
+              echo "❌ 缺失: $f"
+              exit 1
+            fi
+            echo "✅ $f 存在"
+          done
+
+      - name: 检查文档完整性
+        run: |
+          echo "🔍 检查 docs 文档完整性..."
+          for f in docs/architecture.md docs/seven-step-framework.md docs/silicon-lithium-playbook.md docs/actionable-sop.md docs/automation-schedule.md; do
+            if [ ! -f "$f" ]; then
+              echo "❌ 缺失: $f"
+              exit 1
+            fi
+            echo "✅ $f 存在"
+          done
+
+      - name: 扫描硬编码凭证（安全审计）
+        run: |
+          echo "🔍 扫描代码中可能的硬编码凭证..."
+          # 检查常见敏感模式（密码、Token、授权码明文）
+          if grep -rEn "(password|api_key|apikey|secret_key|access_token|qq_auth_code|授权码)\s*[=:]\s*['\"][^'\"]+['\"]" \
+            --include="*.py" --include="*.md" --include="*.yml" \
+            commodity/ us-stock/ docs/ README.md 2>/dev/null; then
+            echo "❌ 发现疑似硬编码凭证，请检查！"
+            exit 1
+          fi
+          echo "✅ 未发现硬编码凭证"

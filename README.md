@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![WorkBuddy Skill](https://img.shields.io/badge/WorkBuddy-Skill-green.svg)](https://www.workbuddy.cn/)
+[![CI](https://github.com/<your-username>/workbuddy-market-briefings/actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 ---
 
@@ -231,7 +232,7 @@ workbuddy-market-briefings/
 
 ## 👤 作者
 
-**Frank** —— 期货经纪 / 波动率实验室
+**洪树海（Frank）** —— 期货经纪 / 波动率实验室
 📧 hongshuhai@foxmail.com
 📍 宁波，中国
 
