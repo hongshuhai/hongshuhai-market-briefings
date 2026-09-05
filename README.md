@@ -7,6 +7,8 @@
 [![WorkBuddy Skill](https://img.shields.io/badge/WorkBuddy-Skill-green.svg)](https://www.workbuddy.cn/)
 [![CI](https://github.com/hongshuhai/hongshuhai-market-briefings/actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
+🏷️ **Topics**: `futures` · `commodity` · `trading` · `automation` · `python` · `workbuddy` · `silicon` · `lithium` · `us-stocks` · `options` · `chinese` · `broker` · `market-data` · `macro` · `html-report` · `email-automation` · `scheduled-tasks` · `newsletter` · `daily-report` · `finance`
+
 ---
 
 ## 📌 项目定位
@@ -238,6 +240,64 @@ hongshuhai-market-briefings/
 📍 宁波，中国
 
 > 选定单一积累路径，深度优先于广度。
+
+---
+
+## 🏷️ Topics / Keywords / Classifiers
+
+仓库侧栏已设置 20 个 GitHub Topics。下方分类供参考索引（PyPI 风格）：
+
+### GitHub Topics（20 个）
+
+按 PyPI Topic 体系分组：
+
+| PyPI 主题分类 | Topics |
+|---|---|
+| **金融 / 投资** | `futures`, `commodity`, `trading`, `broker`, `market-data`, `options`, `macro`, `finance` |
+| **技术栈** | `python`, `workbuddy`, `automation` |
+| **应用场景** | `html-report`, `email-automation`, `newsletter`, `daily-report`, `scheduled-tasks` |
+| **品种 / 地域** | `silicon`, `lithium`, `us-stocks`, `chinese` |
+
+### PyPI Classifiers（setup.py 等价风格）
+
+```text
+Development Status :: 4 - Beta
+Intended Audience :: Financial and Insurance Industry
+Intended Audience :: Developers
+License :: OSI Approved :: MIT License
+Operating System :: MacOS
+Operating System :: POSIX :: Linux
+Programming Language :: Python :: 3
+Programming Language :: Python :: 3.10
+Programming Language :: Python :: 3.11
+Programming Language :: Python :: 3.12
+Programming Language :: Python :: 3.13
+Topic :: Office/Business :: Financial :: Investment
+Topic :: Communications :: Email
+Topic :: Scientific/Engineering :: Information Analysis
+Topic :: Utilities
+Natural Language :: Chinese (Simplified)
+Natural Language :: English
+```
+
+### Python Keywords（setup.py 等价风格）
+
+```python
+keywords = [
+    # 金融领域
+    "futures", "commodity", "trading", "broker", "market-data",
+    "us-stocks", "options", "macro", "silicon", "lithium",
+    # 报告形态
+    "morning-brief", "daily-report", "newsletter",
+    "html-report", "email-automation",
+    # 自动化基座
+    "automation", "scheduled-tasks", "workbuddy",
+    # 国际化
+    "chinese", "finance",
+]
+```
+
+> 💡 **为什么要列**：GitHub 仓库搜索 + V2EX/知乎/CSDN/掘金等中文社区搜索，都会按这些关键字聚合。设上 Topics 后，仓库在 GitHub Explore 与搜索引擎的可发现性会显著提升。
 
 ---
 
