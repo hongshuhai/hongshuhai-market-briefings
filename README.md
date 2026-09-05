@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![WorkBuddy Skill](https://img.shields.io/badge/WorkBuddy-Skill-green.svg)](https://www.workbuddy.cn/)
-[![CI](https://github.com/<your-username>/workbuddy-market-briefings/actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
+[![CI](https://github.com/hongshuhai/hongshuhai-market-briefings/actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 ---
 
@@ -74,8 +74,8 @@ lithium_focus_report.py      ← 碳酸锂 LC 第二主战场专题
 ### 安装
 
 ```bash
-git clone https://github.com/<your-name>/workbuddy-market-briefings.git
-cd workbuddy-market-briefings
+git clone https://github.com/hongshuhai/hongshuhai-market-briefings.git
+cd hongshuhai-market-briefings
 ```
 
 无需 pip install，**纯标准库**（`smtplib` / `urllib` / `json` / `openpyxl` 仅 Excel 模块需要）。
@@ -144,11 +144,12 @@ us-stock/SKILL.md        # 美股盘前/盘后（合并版）
 ## 📁 项目结构
 
 ```
-workbuddy-market-briefings/
+hongshuhai-market-briefings/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
 ├── docs/                         # 深度文档
+│   ├── project-intro.md          # 📣 项目介绍（图文版，含截图 + 数据流图）
 │   ├── architecture.md           # 单源架构图 + 数据流
 │   ├── seven-step-framework.md   # 七步测温方法论
 │   ├── silicon-lithium-playbook.md

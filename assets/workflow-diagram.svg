@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 516" width="100%" role="img" aria-labelledby="wfTitle wfDesc">
+  <title id="wfTitle">数据流图：单源架构</title>
+  <desc id="wfDesc">数据从新浪/东财/腾讯/SMM/百度采集，进入 commodity_morning_report.py 的 CONTEXT 单一数据源，生成主报、硅链专题、锂链专题三份报告，产出 HTML 报告与 Excel 模板，最终经 SMTP 定时发送到 QQ 邮箱。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <style>
+    .t { font-family: -apple-system, sans-serif; font-size: 13px; fill: #2C2C2A; }
+    .th { font-family: -apple-system, sans-serif; font-size: 13.5px; font-weight: 500; }
+    .ts { font-family: -apple-system, sans-serif; font-size: 11.5px; }
+    .lbl { font-family: -apple-system, sans-serif; font-size: 11px; fill: #888780; }
+    .conn { stroke: #B4B2A9; stroke-width: 1.5; fill: none; }
+    .bus { stroke: #D3D1C7; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <g>
+    <rect x="52" y="40" width="132" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+    <text class="th" x="118" y="58" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">新浪期货</text>
+    <text class="ts" x="118" y="74" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">行情 / 持仓</text>
+  </g>
+  <g>
+    <rect x="200" y="40" width="132" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+    <text class="th" x="266" y="58" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">东财 / 腾讯</text>
+    <text class="ts" x="266" y="74" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">K 线 / 日线</text>
+  </g>
+  <g>
+    <rect x="348" y="40" width="132" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+    <text class="th" x="414" y="58" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">SMM / Mysteel</text>
+    <text class="ts" x="414" y="74" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">现货 / 基差</text>
+  </g>
+  <g>
+    <rect x="496" y="40" width="132" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+    <text class="th" x="562" y="58" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">百度 / Yahoo</text>
+    <text class="ts" x="562" y="74" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">宏观 / 外盘</text>
+  </g>
+
+  <path class="conn" d="M118 84 L118 102"/>
+  <path class="conn" d="M266 84 L266 102"/>
+  <path class="conn" d="M414 84 L414 102"/>
+  <path class="conn" d="M562 84 L562 102"/>
+  <path class="bus" d="M118 102 L562 102"/>
+  <path class="conn" marker-end="url(#arrow)" d="M340 102 L340 128"/>
+
+  <g>
+    <rect x="150" y="132" width="380" height="60" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+    <text class="th" x="340" y="154" text-anchor="middle" dominant-baseline="central" fill="#0C447C">commodity_morning_report.py</text>
+    <text class="ts" x="340" y="174" text-anchor="middle" dominant-baseline="central" fill="#185FA5">CONTEXT · 单一数据源（14+ key）</text>
+  </g>
+
+  <path class="conn" d="M340 192 L340 212"/>
+  <path class="bus" d="M134 212 L546 212"/>
+  <path class="conn" marker-end="url(#arrow)" d="M134 212 L134 236"/>
+  <path class="conn" marker-end="url(#arrow)" d="M340 212 L340 236"/>
+  <path class="conn" marker-end="url(#arrow)" d="M546 212 L546 236"/>
+
+  <g>
+    <rect x="39" y="240" width="190" height="60" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+    <text class="th" x="134" y="262" text-anchor="middle" dominant-baseline="central" fill="#085041">主报 · commodity_morning</text>
+    <text class="ts" x="134" y="282" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">16 品种七步测温</text>
+  </g>
+  <g>
+    <rect x="245" y="240" width="190" height="60" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+    <text class="th" x="340" y="262" text-anchor="middle" dominant-baseline="central" fill="#085041">硅链专题 · SI / PS</text>
+    <text class="ts" x="340" y="282" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">工业硅 + 多晶硅</text>
+  </g>
+  <g>
+    <rect x="451" y="240" width="190" height="60" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+    <text class="th" x="546" y="262" text-anchor="middle" dominant-baseline="central" fill="#085041">锂链专题 · LC</text>
+    <text class="ts" x="546" y="282" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">碳酸锂 强现实博弈</text>
+  </g>
+
+  <path class="conn" d="M134 300 L134 318"/>
+  <path class="conn" d="M340 300 L340 318"/>
+  <path class="conn" d="M546 300 L546 318"/>
+  <path class="bus" d="M134 318 L546 318"/>
+  <path class="conn" marker-end="url(#arrow)" d="M340 318 L340 336"/>
+
+  <g>
+    <rect x="190" y="340" width="300" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+    <text class="th" x="340" y="360" text-anchor="middle" dominant-baseline="central" fill="#633806">产出：HTML 报告 + Excel 模板</text>
+    <text class="ts" x="340" y="378" text-anchor="middle" dominant-baseline="central" fill="#854F0B">高保真可读 / 7 步 Excel 自动算 bp</text>
+  </g>
+
+  <path class="conn" marker-end="url(#arrow)" d="M340 396 L340 436"/>
+
+  <g>
+    <rect x="190" y="440" width="300" height="56" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+    <text class="th" x="340" y="460" text-anchor="middle" dominant-baseline="central" fill="#3C3489">SMTP → QQ 邮箱</text>
+    <text class="ts" x="340" y="478" text-anchor="middle" dominant-baseline="central" fill="#534AB7">每日定时 · 自动化无人值守</text>
+  </g>
+</svg>
