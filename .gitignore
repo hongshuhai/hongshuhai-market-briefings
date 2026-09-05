@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# 运行时生成的 JSON 数据文件（由 *_fetch.py / *_analyze.py 产生，不进版本控制）
+*.json
+!package.json
+!tsconfig.json
+
+# 运行时生成的 HTML 报告（仅 examples/ 目录下的进版本控制）
+outputs/*.html
+outputs/**/*.html
+!examples/**/*.html
+
+# 工作目录临时文件
+tmp/
+*.tmp
+*.bak
+*.log
+
+# 环境变量与本地配置
+.env
+.env.local
+config.local.py
+
+# 个人 outputs 目录（每个用户的实际报告输出位置）
+/outputs/
+
+# macOS
+.DS_Store
+
+# 历史脚本（每个日期的版本，仅保留 _YYYY_MM_DD 后缀的最新版本）
+generate_*_20[0-9][0-9]_[0-9][0-9]_[0-9][0-9].py
+fetch_*_20[0-9][0-9]_[0-9][0-9]_[0-9][0-9].py
+update_*_20[0-9][0-9]_[0-9][0-9]_[0-9][0-9].py
+send_*_20[0-9][0-9]_[0-9][0-9]_[0-9][0-9].py
