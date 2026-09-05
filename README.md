@@ -233,7 +233,7 @@ hongshuhai-market-briefings/
 
 ## 👤 作者
 
-**洪树海（Frank）** —— 期货经纪 / 波动率实验室
+**洪树海（Frank）**
 📧 hongshuhai@foxmail.com
 📍 宁波，中国
 
