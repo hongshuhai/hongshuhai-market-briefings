@@ -245,7 +245,11 @@ hongshuhai-market-briefings/
 
 ## 🏷️ Topics / Keywords / Classifiers
 
-仓库侧栏已设置 20 个 GitHub Topics。下方分类供参考索引（PyPI 风格）：
+仓库侧栏推荐设置 20 个 GitHub Topics（按 PyPI Topic 体系分组）。下方三块内容全部对应：
+
+- **GitHub Topics**（仓库侧栏 · About）—— 设置后 GitHub Explore 与搜索引擎会按 tag 聚合
+- **PyPI Classifiers**（`setup.py` 的 `classifiers=`）—— 复制即用，若以后转 PyPI 包
+- **Python Keywords**（`setup.py` 的 `keywords=`）—— 复制即用
 
 ### GitHub Topics（20 个）
 
